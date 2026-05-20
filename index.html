@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUTURE SYNTHESIS | 未来予測メディア</title>
+    <meta name="description" content="30〜50代の知的好奇心を満たす、未来社会・テクノロジー・宇宙に関する最先端の未来予測メディアサイト。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="glass-header">
+        <div class="header-container">
+            <h1 class="logo">FUTURE SYNTHESIS</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#articles">記事一覧</a></li>
+                    <li><a href="#newsletter">ニュースレター</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="hero-bg" style="background-image: url('images/hero_bg.png');"></div>
+        <div class="hero-content">
+            <h2 class="hero-title">未知なる領域を、読み解く。</h2>
+            <p class="hero-subtitle">テクノロジーと宇宙が交差する、知的好奇心のための未来予測メディア</p>
+            <a href="#articles" class="cta-button">最新の記事を読む</a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>SCROLL</p>
+        </div>
+    </section>
+
+    <!-- 記事セクション -->
+    <main id="articles" class="section-container fade-in">
+        <div class="section-header">
+            <h2 class="section-title">Latest Articles</h2>
+            <p class="section-desc">最先端のテクノロジー動向と未来予測</p>
+        </div>
+
+        <div class="article-grid">
+            <!-- 記事カード 1 -->
+            <article class="note-card">
+                <div class="card-image">
+                    <img src="images/card_ai.png" alt="汎用人工知能（AGI）の到来">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category tech">Technology</span>
+                        <time datetime="2026-05-18">2026.05.18</time>
+                    </div>
+                    <h3 class="card-title">汎用人工知能（AGI）は私たちの知性をどう拡張するのか</h3>
+                    <p class="card-excerpt">次世代AIアーキテクチャの進化がもたらす、社会構造の根本的な変革と人類の新しい役割について考察する。</p>
+                    <div class="card-author">
+                        <div class="author-avatar">FS</div>
+                        <span class="author-name">Future Synthesis 編集部</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 記事カード 2 -->
+            <article class="note-card">
+                <div class="card-image">
+                    <img src="images/card_space_colony.png" alt="宇宙生活圏の構築">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category space">Space</span>
+                        <time datetime="2026-05-15">2026.05.15</time>
+                    </div>
+                    <h3 class="card-title">軌道上居住区構想：人類が宇宙に住む日のための都市設計</h3>
+                    <p class="card-excerpt">重力制御から閉鎖生態系生命維持システムまで。地球外コロニー実現に向けた最新の技術的ブレイクスルーに迫る。</p>
+                    <div class="card-author">
+                        <div class="author-avatar">FS</div>
+                        <span class="author-name">Future Synthesis 編集部</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 記事カード 3 -->
+            <article class="note-card">
+                <div class="card-image">
+                    <img src="images/card_cyber_city.png" alt="次世代スマートシティ">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category society">Society</span>
+                        <time datetime="2026-05-10">2026.05.10</time>
+                    </div>
+                    <h3 class="card-title">超監視社会か、究極の最適化か。次世代サイバーシティの光と影</h3>
+                    <p class="card-excerpt">IoTと量子コンピューティングが統合された未来の都市インフラ。プライバシーと利便性の境界線はどこにあるのか。</p>
+                    <div class="card-author">
+                        <div class="author-avatar">FS</div>
+                        <span class="author-name">Future Synthesis 編集部</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- ニュースレターセクション -->
+    <section id="newsletter" class="newsletter-section fade-in">
+        <div class="newsletter-container">
+            <div class="newsletter-text">
+                <h2>Join the Future.</h2>
+                <p>最先端の未来予測レポートを毎週お届けします。あなたの知的好奇心を満たす情報を、いち早くキャッチしましょう。</p>
+            </div>
+            <div class="newsletter-form-wrapper">
+                <iframe src="https://phity.substack.com/embed" width="100%" height="320" style="border: 1px solid rgba(255, 255, 255, 0.1); background: #ffffff; border-radius: 12px; overflow: hidden;" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer-content">
+            <h2 class="logo">FUTURE SYNTHESIS</h2>
+            <p>&copy; 2026 Future Synthesis Media. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
