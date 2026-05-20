@@ -1,0 +1,57 @@
+media:
+  input: public/images
+  output: /images
+content:
+  - name: posts
+    label: 記事 (Posts)
+    type: collection
+    path: src/content/posts
+    view:
+      fields:
+        - title
+        - date
+        - category
+    fields:
+      - name: title
+        label: タイトル
+        type: string
+        required: true
+      - name: date
+        label: 日付
+        type: date
+        required: true
+      - name: description
+        label: 概要 (Description)
+        type: string
+      - name: thumbnail
+        label: サムネイル画像
+        type: image
+      - name: category
+        label: カテゴリー
+        type: string
+      - name: tags
+        label: タグ
+        type: string
+        list: true
+      - name: draft
+        label: 下書き
+        type: boolean
+        default: false
+      - name: author
+        label: 著者
+        type: string
+      - name: body
+        label: 本文
+        type: rich-text
+  - name: pages
+    label: 固定ページ (Pages)
+    type: collection
+    path: src/content/pages
+    fields:
+      - name: title
+        label: タイトル
+        type: string
+        required: true
+      - name: body
+        label: 本文
+        type: rich-text

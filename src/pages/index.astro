@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts', ({ data }) => {
+  return data.draft !== true;
+});
+// Sort by date descending
+posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout>
+    <!-- ヒーローセクション -->
+    <section class="hero" style="position:relative; height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden;">
+        <div class="hero-bg" style="position:absolute; top:0; left:0; width:100%; height:100%; background-image:url('/future_synthesis/images/hero_bg.png'); background-size:cover; background-position:center; z-index:-2; animation: slowZoom 20s infinite alternate linear;"></div>
+        <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to bottom, rgba(3,3,8,0.3) 0%, rgba(3,3,8,1) 100%); z-index:-1;"></div>
+        <div class="hero-content" style="max-width:800px; padding:0 2rem; z-index:1;">
+            <h2 class="hero-title" style="font-size:3.5rem; font-weight:700; margin-bottom:1.5rem; text-shadow:0 0 20px rgba(0,240,255,0.3);">未来を設計する。</h2>
+            <p class="hero-subtitle" style="font-size:1.2rem; color:var(--text-muted); margin-bottom:2.5rem;">AI・文明・建築・国家・資本の未来を考察する知的メディア</p>
+            <a href="#articles" class="cta-button" style="display:inline-block; padding:1rem 2.5rem; font-weight:600; color:var(--bg-color); background:var(--accent-cyan); border-radius:30px; box-shadow:0 0 15px rgba(0,240,255,0.4); transition:all 0.3s ease;">最新の記事を読む</a>
+        </div>
+    </section>
+
+    <!-- 記事セクション -->
+    <main id="articles" class="section-container fade-in">
+        <div class="section-header">
+            <h2 class="section-title">Latest Articles</h2>
+            <p class="section-desc">最先端のテクノロジー動向と未来予測</p>
+        </div>
+
+        <div class="article-grid">
+            {posts.map(post => (
+                <a href={`/future_synthesis/posts/${post.slug}`} class="note-card-link" style="display:block;">
+                    <article class="note-card">
+                        <div class="card-image">
+                            <img src={post.data.thumbnail ? `/future_synthesis${post.data.thumbnail}` : '/future_synthesis/images/hero_bg.png'} alt={post.data.title} loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class={`category ${post.data.category?.toLowerCase() || 'tech'}`}>{post.data.category || 'Technology'}</span>
+                                <time datetime={post.data.date.toISOString()}>{post.data.date.toISOString().split('T')[0]}</time>
+                            </div>
+                            <h3 class="card-title">{post.data.title}</h3>
+                            <p class="card-excerpt">{post.data.description}</p>
+                            <div class="card-author">
+                                <div class="author-avatar">{post.data.author ? post.data.author.substring(0, 2).toUpperCase() : 'FS'}</div>
+                                <span class="author-name">{post.data.author || '編集部'}</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            ))}
+        </div>
+    </main>
+
+    <!-- ニュースレターセクション -->
+    <section id="newsletter" class="newsletter-section fade-in">
+        <div class="newsletter-container">
+            <div class="newsletter-text">
+                <h2>Join the Future.</h2>
+                <p>最先端の未来予測レポートを毎週お届けします。あなたの知的好奇心を満たす情報を、いち早くキャッチしましょう。</p>
+            </div>
+            <div class="newsletter-form-wrapper">
+                <iframe src="https://phity.substack.com/embed" width="100%" height="320" style="border: 1px solid rgba(255, 255, 255, 0.1); background: #ffffff; border-radius: 12px; overflow: hidden;" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 0 25px rgba(0, 240, 255, 0.6); }
+    </style>
+</BaseLayout>
