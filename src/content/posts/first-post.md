@@ -1,14 +1,16 @@
 ---
-title: "AI時代に「学び続けられる人」と「止まる人」の決定的差"
+title: ☆AI時代に「学び続けられる人」と「止まる人」の決定的差
 date: 2026-05-09
-description: "AIの進化スピードが加速する中、スキルをアップデートし続けられる人と、立ち止まってしまう人の間にある決定的な思考の違いについて解説します。"
-thumbnail: "/images/card_ai.png"
-category: "Mindset"
-tags: ["AI", "Career", "Mindset"]
+description: AIの進化スピードが加速する中、スキルをアップデートし続けられる人と、立ち止まってしまう人の間にある決定的な思考の違いについて解説します。
+thumbnail: /images/card_ai.png
+category: Mindset
+tags:
+  - AI
+  - Career
+  - Mindset
 draft: false
-author: "フィティ"
+author: フィティ
 ---
-
 「AIが仕事を奪う」という言葉を、もう何度聞いたでしょうか。
 ニュースは危機感を煽り、SNSは断片的な情報で溢れています。でも、肝心な「では自分はどう動けばいいのか」という問いに、正面から答えてくれるコンテンツはほとんどありません。
 
