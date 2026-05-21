@@ -1,4 +1,4 @@
-# FUTURE SYNTHESIS - 次世代AI思想メディア　
+# FUTURE SYNTHESIS - 次世代AI思想メディ　ア　
 
 AstroとPages CMSを利用した、静的サイトジェネレーター（SSG）ベースのメディアサイトです。
 
