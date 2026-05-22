@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#09090b"/><stop offset="1" stop-color="#4c1d95"/></linearGradient></defs>
+  <rect width="960" height="540" fill="url(#g)"/>
+  <g fill="#a78bfa"><circle cx="210" cy="180" r="9"/><circle cx="420" cy="120" r="9"/><circle cx="710" cy="210" r="9"/><circle cx="520" cy="360" r="9"/><circle cx="300" cy="390" r="9"/></g>
+  <g stroke="#c4b5fd" stroke-opacity=".5" fill="none"><path d="M210 180 420 120 710 210 520 360 300 390 210 180M420 120 520 360M710 210 300 390"/></g>
+  <text x="54" y="92" fill="#fff" font-family="Arial" font-size="42" font-weight="700">Network State</text>
+</svg>

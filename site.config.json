@@ -1,0 +1,24 @@
+{
+  "title": "Future Synthesis",
+  "siteName": "Future Synthesis",
+  "description": "AI・文明・建築・国家・資本の未来を考察する知的メディア",
+  "url": "https://phity-j.github.io/future_synthesis",
+  "author": "Future Synthesis Lab",
+  "lang": "ja",
+  "twitter": "@phity_j",
+  "email": "hello@example.com",
+  "defaultOgImage": "/public/images/og-future-synthesis.svg",
+  "navigation": [
+    { "label": "最新", "href": "#latest" },
+    { "label": "AI文明論", "href": "#ai-civilization" },
+    { "label": "木造建築2.0", "href": "#wood-architecture" },
+    { "label": "特集", "href": "#features" },
+    { "label": "Newsletter", "href": "#newsletter" }
+  ],
+  "social": {
+    "x": "https://x.com/",
+    "threads": "https://www.threads.net/",
+    "note": "https://note.com/",
+    "substack": "https://substack.com/"
+  }
+}

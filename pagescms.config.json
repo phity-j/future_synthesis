@@ -1,0 +1,13 @@
+{
+  "$schema": "https://pagescms.org/schema.json",
+  "note": "Pages CMSの現行仕様では、このJSONではなくリポジトリ直下の .pages.yml が実際に読み込まれます。このファイルは要件確認と設定バックアップ用です。",
+  "media": [
+    { "name": "images", "label": "画像", "input": "public/images", "output": "/public/images" },
+    { "name": "thumbnails", "label": "サムネイル", "input": "public/thumbnails", "output": "/public/thumbnails" }
+  ],
+  "content": [
+    { "name": "posts", "label": "記事", "type": "collection", "path": "content/posts", "format": "yaml-frontmatter" },
+    { "name": "pages", "label": "固定ページ", "type": "collection", "path": "content/pages", "format": "yaml-frontmatter" },
+    { "name": "site", "label": "サイト設定・SEO", "type": "file", "path": "site.config.json" }
+  ]
+}
