@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Post Editor | FUTURE SYNTHESIS"
+  description="FUTURE SYNTHESIS の投稿作成画面"
+>
+  <main class="editor-page">
+    <section class="editor-shell">
+      <div class="editor-heading">
+        <p class="editor-kicker">Post Editor</p>
+        <h1>新しい投稿を作成</h1>
+      </div>
+
+      <div class="editor-workspace">
+        <form class="editor-form" id="post-editor">
+          <label>
+            <span>タイトル</span>
+            <input id="title" name="title" type="text" placeholder="投稿タイトル" required>
+          </label>
+
+          <div class="editor-row">
+            <label>
+              <span>日付</span>
+              <input id="date" name="date" type="date" required>
+            </label>
+            <label>
+              <span>カテゴリ</span>
+              <input id="category" name="category" type="text" placeholder="Technology">
+            </label>
+          </div>
+
+          <label>
+            <span>説明</span>
+            <textarea id="description" name="description" rows="3" placeholder="記事一覧に表示する短い説明"></textarea>
+          </label>
+
+          <div class="editor-row">
+            <label>
+              <span>サムネイル</span>
+              <input id="thumbnail" name="thumbnail" type="text" placeholder="/images/hero_bg.png">
+            </label>
+            <label>
+              <span>著者</span>
+              <input id="author" name="author" type="text" placeholder="Future Synthesis">
+            </label>
+          </div>
+
+          <label>
+            <span>タグ</span>
+            <input id="tags" name="tags" type="text" placeholder="AI, Future, Society">
+          </label>
+
+          <label>
+            <span>本文</span>
+            <textarea id="body" name="body" rows="14" placeholder="Markdown で本文を書きます。"></textarea>
+          </label>
+
+          <div class="editor-actions">
+            <button type="button" id="copy-markdown" class="secondary-button">コピー</button>
+            <button type="button" id="download-markdown" class="primary-button">Markdownを保存</button>
+          </div>
+          <p class="editor-status" id="editor-status" aria-live="polite"></p>
+        </form>
+
+        <aside class="editor-preview" aria-label="Markdown preview">
+          <div class="preview-toolbar">
+            <span>Preview</span>
+            <code id="filename">new-post.md</code>
+          </div>
+          <pre id="markdown-preview"></pre>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const fields = {
+      title: document.getElementById('title'),
+      date: document.getElementById('date'),
+      category: document.getElementById('category'),
+      description: document.getElementById('description'),
+      thumbnail: document.getElementById('thumbnail'),
+      author: document.getElementById('author'),
+      tags: document.getElementById('tags'),
+      body: document.getElementById('body'),
+    };
+
+    const preview = document.getElementById('markdown-preview');
+    const filename = document.getElementById('filename');
+    const status = document.getElementById('editor-status');
+    const storageKey = 'future-synthesis-editor-draft';
+
+    const pad = (value) => String(value).padStart(2, '0');
+    const today = new Date();
+    fields.date.value = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
+
+    const escapeFrontmatter = (value) => String(value || '').replaceAll('"', '\\"').trim();
+    const slugify = (value) => {
+      const base = String(value || 'new-post')
+        .normalize('NFKD')
+        .toLowerCase()
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9\u3040-\u30ff\u3400-\u9fff]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+      return base || 'new-post';
+    };
+
+    const getTagsYaml = (value) => {
+      const tags = String(value || '')
+        .split(',')
+        .map((tag) => tag.trim())
+        .filter(Boolean);
+      if (tags.length === 0) return 'tags: []';
+      return ['tags:', ...tags.map((tag) => `  - ${escapeFrontmatter(tag)}`)].join('\n');
+    };
+
+    const buildMarkdown = () => {
+      const title = fields.title.value || 'Untitled';
+      const slug = slugify(title);
+      filename.textContent = `${slug}.md`;
+
+      return `---\ntitle: "${escapeFrontmatter(title)}"\ndate: ${fields.date.value || ''}\ndescription: "${escapeFrontmatter(fields.description.value)}"\nthumbnail: ${escapeFrontmatter(fields.thumbnail.value || '/images/hero_bg.png')}\ncategory: ${escapeFrontmatter(fields.category.value || 'Technology')}\n${getTagsYaml(fields.tags.value)}\ndraft: false\nauthor: "${escapeFrontmatter(fields.author.value || 'Future Synthesis')}"\n---\n\n${fields.body.value || ''}\n`;
+    };
+
+    const saveDraft = () => {
+      const draft = Object.fromEntries(
+        Object.entries(fields).map(([key, field]) => [key, field.value])
+      );
+      localStorage.setItem(storageKey, JSON.stringify(draft));
+    };
+
+    const updatePreview = () => {
+      preview.textContent = buildMarkdown();
+      saveDraft();
+    };
+
+    const loadDraft = () => {
+      const saved = localStorage.getItem(storageKey);
+      if (!saved) return;
+      try {
+        const draft = JSON.parse(saved);
+        Object.entries(fields).forEach(([key, field]) => {
+          if (draft[key]) field.value = draft[key];
+        });
+      } catch {
+        localStorage.removeItem(storageKey);
+      }
+    };
+
+    const showStatus = (message) => {
+      status.textContent = message;
+      window.setTimeout(() => {
+        if (status.textContent === message) status.textContent = '';
+      }, 2400);
+    };
+
+    Object.values(fields).forEach((field) => {
+      field.addEventListener('input', updatePreview);
+    });
+
+    document.getElementById('download-markdown').addEventListener('click', () => {
+      const markdown = buildMarkdown();
+      const blob = new Blob([markdown], { type: 'text/markdown;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename.textContent || 'new-post.md';
+      link.click();
+      URL.revokeObjectURL(url);
+      showStatus('Markdown ファイルを保存しました。');
+    });
+
+    document.getElementById('copy-markdown').addEventListener('click', async () => {
+      await navigator.clipboard.writeText(buildMarkdown());
+      showStatus('Markdown をコピーしました。');
+    });
+
+    loadDraft();
+    updatePreview();
+  </script>
+</BaseLayout>
