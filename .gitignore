@@ -1,5 +1,13 @@
 node_modules/
-dist/
 .astro/
 .npm-cache/
-npm-debug.log*
+dist/
+logs/
+.DS_Store
+*.log
+repo.zip
+runs*.json
+jobs.json
+temp.html
+logs.zip
+.github/.github/
