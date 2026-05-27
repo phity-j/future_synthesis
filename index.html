@@ -1,184 +1,68 @@
-<!doctype html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Future Synthesis | Future Synthesis</title>
-<meta name="description" content="AI・文明・建築・国家・資本の未来を考察する知的メディア">
-<link rel="canonical" href="https://phity-j.github.io/future_synthesis/">
-<meta property="og:site_name" content="Future Synthesis">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Future Synthesis">
-<meta property="og:description" content="AI・文明・建築・国家・資本の未来を考察する知的メディア">
-<meta property="og:url" content="https://phity-j.github.io/future_synthesis/">
-<meta property="og:image" content="https://phity-j.github.io/future_synthesis/public/images/og-future-synthesis.svg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Future Synthesis">
-<meta name="twitter:description" content="AI・文明・建築・国家・資本の未来を考察する知的メディア">
-<meta name="twitter:image" content="https://phity-j.github.io/future_synthesis/public/images/og-future-synthesis.svg">
-<meta name="theme-color" content="#050816">
-<link rel="preload" href="/future_synthesis/assets/css/site.css" as="style">
-<link rel="stylesheet" href="/future_synthesis/assets/css/site.css">
-<link rel="alternate" type="application/rss+xml" title="Future Synthesis RSS" href="/future_synthesis/rss.xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Future Synthesis","url":"https://phity-j.github.io/future_synthesis","description":"AI・文明・建築・国家・資本の未来を考察する知的メディア","potentialAction":{"@type":"SearchAction","target":"https://phity-j.github.io/future_synthesis/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
-</head><body><header class="site-header">
-  <a class="brand" href="/future_synthesis/"><span class="brand-mark"></span><span>Future Synthesis</span></a>
-  <nav class="nav"><a href="/future_synthesis/#latest">最新</a><a href="/future_synthesis/#ai-civilization">AI文明論</a><a href="/future_synthesis/#wood-architecture">木造建築2.0</a><a href="/future_synthesis/#features">特集</a><a href="/future_synthesis/#newsletter">Newsletter</a><a href="/future_synthesis/admin/">Admin</a></nav>
-</header><main>
-  <section class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-content">
-      <p class="eyebrow">AI CIVILIZATION / FUTURE LAB</p>
-      <h1>未来を設計する。</h1>
-      <p>AI・文明・建築・国家・資本の未来を考察する知的メディア</p>
-      <div class="hero-actions"><a class="button primary" href="#latest">読む</a><a class="button ghost" href="#newsletter">Newsletter</a></div>
+---
+layout: default
+---
+<!-- ヒーローセクション -->
+<section class="hero" style="position:relative; height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden;">
+    <div class="hero-bg" style="position:absolute; top:0; left:0; width:100%; height:100%; background-image:url('{{ site.baseurl }}/images/hero_bg.png'); background-size:cover; background-position:center; z-index:-2; animation: slowZoom 20s infinite alternate linear;"></div>
+    <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to bottom, rgba(3,3,8,0.3) 0%, rgba(3,3,8,1) 100%); z-index:-1;"></div>
+    <div class="hero-content" style="max-width:800px; padding:0 2rem; z-index:1;">
+        <h2 class="hero-title" style="font-size:3.5rem; font-weight:700; margin-bottom:1.5rem; text-shadow:0 0 20px rgba(0,240,255,0.3);">未来を設計する。</h2>
+        <p class="hero-subtitle" style="font-size:1.2rem; color:var(--text-muted); margin-bottom:2.5rem;">AI・文明・建築・国家・資本の未来を考察する知的メディア</p>
+        <a href="#articles" class="cta-button" style="display:inline-block; padding:1rem 2.5rem; font-weight:600; color:var(--bg-color); background:var(--accent-cyan); border-radius:30px; box-shadow:0 0 15px rgba(0,240,255,0.4); transition:all 0.3s ease;">最新の記事を読む</a>
     </div>
-    <aside class="hero-panel">
-      <span>Research Map</span>
-      <strong>AI国家 / 木造建築2.0 / 縮小社会</strong>
-      <p>思想、産業、制度、空間をつなぎ、次の文明モデルを編集する。</p>
-    </aside>
-  </section>
+</section>
 
-  <section class="section search-section">
-    <div class="section-head"><p class="eyebrow">Search</p><h2>記事を探す</h2></div>
-    <input id="site-search" class="search-input" type="search" placeholder="AI国家、木造建築2.0、縮小社会..." autocomplete="off">
-  </section>
+<!-- 記事セクション -->
+<main id="articles" class="section-container fade-in">
+    <div class="section-header">
+        <h2 class="section-title">Latest Articles</h2>
+        <p class="section-desc">最先端のテクノロジー動向と未来予測</p>
+    </div>
 
-  <section id="latest" class="section">
-    <div class="section-head"><p class="eyebrow">latest</p><h2>最新記事</h2></div>
-    <div class="grid"><article class="article-card " data-title="AI資本主義とネット国家の輪郭" data-tags="AI資本主義 ネット空間 AI国家 国家戦略" data-category="AI資本主義">
-    <a href="/future_synthesis/posts/network-state-capital/" class="thumb"><img src="/future_synthesis/public/thumbnails/network-state.svg" alt="" loading="lazy" width="960" height="540"></a>
-    <div class="card-body">
-      <div class="meta"><span>AI資本主義</span><span>1分で読める</span></div>
-      <h3><a href="/future_synthesis/posts/network-state-capital/">AI資本主義とネット国家の輪郭</a></h3>
-      <p>AI資本主義、ネット空間、国家戦略が交差する時代に、新しい公共性と所有を考える。</p>
-      <div class="tags"><span>AI資本主義</span><span>ネット空間</span><span>AI国家</span></div>
-      <div class="card-actions"><button class="like-button" type="button" aria-label="スキ">♡</button><a href="/future_synthesis/posts/network-state-capital/">続きを読む</a></div>
+    <div class="article-grid">
+        {% for post in site.posts %}
+            {% if post.draft != true %}
+            <a href="{{ site.baseurl }}{{ post.url }}" class="note-card-link" style="display:block;">
+                <article class="note-card">
+                    <div class="card-image">
+                        <img src="{{ site.baseurl }}{% if post.thumbnail %}{{ post.thumbnail }}{% else %}/images/hero_bg.png{% endif %}" alt="{{ post.title }}" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="category {{ post.category | downcase }}">{{ post.category | default: 'Technology' }}</span>
+                            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+                        </div>
+                        <h3 class="card-title">{{ post.title }}</h3>
+                        <p class="card-excerpt">{{ post.description }}</p>
+                        <div class="card-author">
+                            <div class="author-avatar">PH</div>
+                            <span class="author-name">{{ post.author | default: 'フィティ' }}</span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+            {% endif %}
+        {% endfor %}
     </div>
-  </article><article class="article-card " data-title="木造建築2.0：AIとロボットが森を都市へ接続する" data-tags="木造建築2.0 建築AI 縮小社会 国家戦略" data-category="木造建築2.0">
-    <a href="/future_synthesis/posts/wood-architecture-2/" class="thumb"><img src="/future_synthesis/public/thumbnails/wood-architecture.svg" alt="" loading="lazy" width="960" height="540"></a>
-    <div class="card-body">
-      <div class="meta"><span>木造建築2.0</span><span>1分で読める</span></div>
-      <h3><a href="/future_synthesis/posts/wood-architecture-2/">木造建築2.0：AIとロボットが森を都市へ接続する</a></h3>
-      <p>木造建築、生成AI、ロボティクス、地域資本を接続し、縮小社会のための新しい建築産業を考える。</p>
-      <div class="tags"><span>木造建築2.0</span><span>建築AI</span><span>縮小社会</span></div>
-      <div class="card-actions"><button class="like-button" type="button" aria-label="スキ">♡</button><a href="/future_synthesis/posts/wood-architecture-2/">続きを読む</a></div>
+</main>
+
+<!-- ニュースレターセクション -->
+<section id="newsletter" class="newsletter-section fade-in">
+    <div class="newsletter-container">
+        <div class="newsletter-text">
+            <h2>Join the Future.</h2>
+            <p>最先端の未来予測レポートを毎週お届けします。あなたの知的好奇心を満たす情報を、いち早くキャッチしましょう。</p>
+        </div>
+        <div class="newsletter-form-wrapper">
+            <iframe src="https://phity.substack.com/embed" width="100%" height="320" style="border: 1px solid rgba(255, 255, 255, 0.1); background: #ffffff; border-radius: 12px; overflow: hidden;" frameborder="0" scrolling="no"></iframe>
+        </div>
     </div>
-  </article><article class="article-card " data-title="AI文明論：知性が都市を再設計する日" data-tags="AI文明論 AGI AI国家 未来予測" data-category="AI文明論">
-    <a href="/future_synthesis/posts/ai-civilization-protocol/" class="thumb"><img src="/future_synthesis/public/thumbnails/ai-civilization.svg" alt="" loading="lazy" width="960" height="540"></a>
-    <div class="card-body">
-      <div class="meta"><span>AI文明論</span><span>1分で読める</span></div>
-      <h3><a href="/future_synthesis/posts/ai-civilization-protocol/">AI文明論：知性が都市を再設計する日</a></h3>
-      <p>AGI、都市、国家、資本が接続される時代に、人間はどのように未来を設計すべきか。</p>
-      <div class="tags"><span>AI文明論</span><span>AGI</span><span>AI国家</span></div>
-      <div class="card-actions"><button class="like-button" type="button" aria-label="スキ">♡</button><a href="/future_synthesis/posts/ai-civilization-protocol/">続きを読む</a></div>
-    </div>
-  </article></div>
-  </section>
-  <section id="ai-civilization" class="section">
-    <div class="section-head"><p class="eyebrow">ai civilization</p><h2>AI文明論</h2></div>
-    <div class="grid"><article class="article-card " data-title="AI資本主義とネット国家の輪郭" data-tags="AI資本主義 ネット空間 AI国家 国家戦略" data-category="AI資本主義">
-    <a href="/future_synthesis/posts/network-state-capital/" class="thumb"><img src="/future_synthesis/public/thumbnails/network-state.svg" alt="" loading="lazy" width="960" height="540"></a>
-    <div class="card-body">
-      <div class="meta"><span>AI資本主義</span><span>1分で読める</span></div>
-      <h3><a href="/future_synthesis/posts/network-state-capital/">AI資本主義とネット国家の輪郭</a></h3>
-      <p>AI資本主義、ネット空間、国家戦略が交差する時代に、新しい公共性と所有を考える。</p>
-      <div class="tags"><span>AI資本主義</span><span>ネット空間</span><span>AI国家</span></div>
-      <div class="card-actions"><button class="like-button" type="button" aria-label="スキ">♡</button><a href="/future_synthesis/posts/network-state-capital/">続きを読む</a></div>
-    </div>
-  </article><article class="article-card " data-title="AI文明論：知性が都市を再設計する日" data-tags="AI文明論 AGI AI国家 未来予測" data-category="AI文明論">
-    <a href="/future_synthesis/posts/ai-civilization-protocol/" class="thumb"><img src="/future_synthesis/public/thumbnails/ai-civilization.svg" alt="" loading="lazy" width="960" height="540"></a>
-    <div class="card-body">
-      <div class="meta"><span>AI文明論</span><span>1分で読める</span></div>
-      <h3><a href="/future_synthesis/posts/ai-civilization-protocol/">AI文明論：知性が都市を再設計する日</a></h3>
-      <p>AGI、都市、国家、資本が接続される時代に、人間はどのように未来を設計すべきか。</p>
-      <div class="tags"><span>AI文明論</span><span>AGI</span><span>AI国家</span></div>
-      <div class="card-actions"><button class="like-button" type="button" aria-label="スキ">♡</button><a href="/future_synthesis/posts/ai-civilization-protocol/">続きを読む</a></div>
-    </div>
-  </article></div>
-  </section>
-  <section id="wood-architecture" class="section">
-    <div class="section-head"><p class="eyebrow">wood architecture</p><h2>木造建築2.0</h2></div>
-    <div class="grid"><article class="article-card " data-title="木造建築2.0：AIとロボットが森を都市へ接続する" data-tags="木造建築2.0 建築AI 縮小社会 国家戦略" data-category="木造建築2.0">
-    <a href="/future_synthesis/posts/wood-architecture-2/" class="thumb"><img src="/future_synthesis/public/thumbnails/wood-architecture.svg" alt="" loading="lazy" width="960" height="540"></a>
-    <div class="card-body">
-      <div class="meta"><span>木造建築2.0</span><span>1分で読める</span></div>
-      <h3><a href="/future_synthesis/posts/wood-architecture-2/">木造建築2.0：AIとロボットが森を都市へ接続する</a></h3>
-      <p>木造建築、生成AI、ロボティクス、地域資本を接続し、縮小社会のための新しい建築産業を考える。</p>
-      <div class="tags"><span>木造建築2.0</span><span>建築AI</span><span>縮小社会</span></div>
-      <div class="card-actions"><button class="like-button" type="button" aria-label="スキ">♡</button><a href="/future_synthesis/posts/wood-architecture-2/">続きを読む</a></div>
-    </div>
-  </article></div>
-  </section>
-  <section id="popular" class="section">
-    <div class="section-head"><p class="eyebrow">popular</p><h2>人気記事</h2></div>
-    <div class="grid"><article class="article-card " data-title="AI資本主義とネット国家の輪郭" data-tags="AI資本主義 ネット空間 AI国家 国家戦略" data-category="AI資本主義">
-    <a href="/future_synthesis/posts/network-state-capital/" class="thumb"><img src="/future_synthesis/public/thumbnails/network-state.svg" alt="" loading="lazy" width="960" height="540"></a>
-    <div class="card-body">
-      <div class="meta"><span>AI資本主義</span><span>1分で読める</span></div>
-      <h3><a href="/future_synthesis/posts/network-state-capital/">AI資本主義とネット国家の輪郭</a></h3>
-      <p>AI資本主義、ネット空間、国家戦略が交差する時代に、新しい公共性と所有を考える。</p>
-      <div class="tags"><span>AI資本主義</span><span>ネット空間</span><span>AI国家</span></div>
-      <div class="card-actions"><button class="like-button" type="button" aria-label="スキ">♡</button><a href="/future_synthesis/posts/network-state-capital/">続きを読む</a></div>
-    </div>
-  </article><article class="article-card " data-title="木造建築2.0：AIとロボットが森を都市へ接続する" data-tags="木造建築2.0 建築AI 縮小社会 国家戦略" data-category="木造建築2.0">
-    <a href="/future_synthesis/posts/wood-architecture-2/" class="thumb"><img src="/future_synthesis/public/thumbnails/wood-architecture.svg" alt="" loading="lazy" width="960" height="540"></a>
-    <div class="card-body">
-      <div class="meta"><span>木造建築2.0</span><span>1分で読める</span></div>
-      <h3><a href="/future_synthesis/posts/wood-architecture-2/">木造建築2.0：AIとロボットが森を都市へ接続する</a></h3>
-      <p>木造建築、生成AI、ロボティクス、地域資本を接続し、縮小社会のための新しい建築産業を考える。</p>
-      <div class="tags"><span>木造建築2.0</span><span>建築AI</span><span>縮小社会</span></div>
-      <div class="card-actions"><button class="like-button" type="button" aria-label="スキ">♡</button><a href="/future_synthesis/posts/wood-architecture-2/">続きを読む</a></div>
-    </div>
-  </article><article class="article-card " data-title="AI文明論：知性が都市を再設計する日" data-tags="AI文明論 AGI AI国家 未来予測" data-category="AI文明論">
-    <a href="/future_synthesis/posts/ai-civilization-protocol/" class="thumb"><img src="/future_synthesis/public/thumbnails/ai-civilization.svg" alt="" loading="lazy" width="960" height="540"></a>
-    <div class="card-body">
-      <div class="meta"><span>AI文明論</span><span>1分で読める</span></div>
-      <h3><a href="/future_synthesis/posts/ai-civilization-protocol/">AI文明論：知性が都市を再設計する日</a></h3>
-      <p>AGI、都市、国家、資本が接続される時代に、人間はどのように未来を設計すべきか。</p>
-      <div class="tags"><span>AI文明論</span><span>AGI</span><span>AI国家</span></div>
-      <div class="card-actions"><button class="like-button" type="button" aria-label="スキ">♡</button><a href="/future_synthesis/posts/ai-civilization-protocol/">続きを読む</a></div>
-    </div>
-  </article></div>
-  </section>
-  <section id="features" class="section feature-band">
-    <div class="section-head"><p class="eyebrow">Feature</p><h2>特集</h2></div>
-    <div class="feature-grid"><article class="article-card featured-card" data-title="木造建築2.0：AIとロボットが森を都市へ接続する" data-tags="木造建築2.0 建築AI 縮小社会 国家戦略" data-category="木造建築2.0">
-    <a href="/future_synthesis/posts/wood-architecture-2/" class="thumb"><img src="/future_synthesis/public/thumbnails/wood-architecture.svg" alt="" loading="lazy" width="960" height="540"></a>
-    <div class="card-body">
-      <div class="meta"><span>木造建築2.0</span><span>1分で読める</span></div>
-      <h3><a href="/future_synthesis/posts/wood-architecture-2/">木造建築2.0：AIとロボットが森を都市へ接続する</a></h3>
-      <p>木造建築、生成AI、ロボティクス、地域資本を接続し、縮小社会のための新しい建築産業を考える。</p>
-      <div class="tags"><span>木造建築2.0</span><span>建築AI</span><span>縮小社会</span></div>
-      <div class="card-actions"><button class="like-button" type="button" aria-label="スキ">♡</button><a href="/future_synthesis/posts/wood-architecture-2/">続きを読む</a></div>
-    </div>
-  </article><article class="article-card featured-card" data-title="AI文明論：知性が都市を再設計する日" data-tags="AI文明論 AGI AI国家 未来予測" data-category="AI文明論">
-    <a href="/future_synthesis/posts/ai-civilization-protocol/" class="thumb"><img src="/future_synthesis/public/thumbnails/ai-civilization.svg" alt="" loading="lazy" width="960" height="540"></a>
-    <div class="card-body">
-      <div class="meta"><span>AI文明論</span><span>1分で読める</span></div>
-      <h3><a href="/future_synthesis/posts/ai-civilization-protocol/">AI文明論：知性が都市を再設計する日</a></h3>
-      <p>AGI、都市、国家、資本が接続される時代に、人間はどのように未来を設計すべきか。</p>
-      <div class="tags"><span>AI文明論</span><span>AGI</span><span>AI国家</span></div>
-      <div class="card-actions"><button class="like-button" type="button" aria-label="スキ">♡</button><a href="/future_synthesis/posts/ai-civilization-protocol/">続きを読む</a></div>
-    </div>
-  </article></div>
-  </section>
-  <section id="newsletter" class="newsletter">
-    <div>
-      <p class="eyebrow">Newsletter</p>
-      <h2>未来思想をメールで受け取る</h2>
-      <p>新着記事、研究メモ、AI文明論の論点を週次で届けるためのUIです。実運用時はSubstack、Buttondown、ConvertKitなどへ接続できます。</p>
-    </div>
-    <form class="newsletter-form"><input type="email" placeholder="mail@example.com" aria-label="メールアドレス"><button type="submit">登録</button></form>
-  </section>
-  <section id="profile" class="section profile">
-    <div class="profile-orbit"></div>
-    <div><p class="eyebrow">Profile</p><h2>プロフィール</h2><p>Future Synthesis Labの思想、対象領域、運営方針。</p><a href="/future_synthesis/pages/about/">詳しく読む</a></div>
-  </section>
-</main><footer class="site-footer">
-  <div><strong>Future Synthesis</strong><p>AI・文明・建築・国家・資本の未来を考察する知的メディア。</p></div>
-  <div class="footer-links"><a href="/future_synthesis/rss.xml">RSS</a><a href="/future_synthesis/sitemap.xml">Sitemap</a><a href="/future_synthesis/admin/">CMS</a></div>
-</footer>
-<script src="/future_synthesis/assets/js/site.js" defer></script>
-</body></html>
+</section>
+
+<style>
+    @keyframes slowZoom {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.1); }
+    }
+    .cta-button:hover { transform: translateY(-3px); box-shadow: 0 0 25px rgba(0, 240, 255, 0.6); }
+</style>

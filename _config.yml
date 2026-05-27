@@ -1,0 +1,9 @@
+title: FUTURE SYNTHESIS | 未来予測メディア
+description: AI・文明・建築・国家・資本の未来を考察する知的メディア
+url: "https://phity-j.github.io"
+baseurl: "/future_synthesis"
+
+# Jekyll settings
+markdown: kramdown
+theme: jekyll-theme-minimal
+exclude: [".pages.yml", "node_modules", "vendor"]

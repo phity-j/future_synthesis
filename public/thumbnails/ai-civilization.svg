@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
-  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#020617"/><stop offset="1" stop-color="#1e1b4b"/></linearGradient></defs>
-  <rect width="960" height="540" fill="url(#g)"/>
-  <g fill="none" stroke="#60a5fa" stroke-opacity=".45"><circle cx="480" cy="270" r="160"/><circle cx="480" cy="270" r="90"/><path d="M120 410 480 130 840 410M170 150h620M240 470h480"/></g>
-  <text x="54" y="92" fill="#fff" font-family="Arial" font-size="42" font-weight="700">AI Civilization</text>
-</svg>

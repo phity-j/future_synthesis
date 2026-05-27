@@ -1,68 +1,49 @@
----
-export interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
-}
-
-const { 
-  title = "FUTURE SYNTHESIS | 未来予測メディア", 
-  description = "AI・文明・建築・国家・資本の未来を考察する知的メディア",
-  image = "/images/hero_bg.png" 
-} = Astro.props;
-
-import '../styles/global.css';
----
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
-    <meta name="description" content={description}>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     
     <!-- OGP / Twitter Card -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content={title}>
-    <meta property="og:description" content={description}>
-    <meta property="og:image" content={new URL(image, Astro.site || 'https://phity-j.github.io/future_synthesis/')}>
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{% if page.thumbnail %}{{ page.thumbnail }}{% else %}/images/hero_bg.png{% endif %}">
     
     <!-- Google Fonts Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
 </head>
 <body>
     <header class="glass-header">
         <div class="header-container">
-            <a href="/future_synthesis/" class="logo">FUTURE SYNTHESIS</a>
+            <a href="{{ site.baseurl }}/" class="logo">FUTURE SYNTHESIS</a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/future_synthesis/#articles">最新記事</a></li>
-                    <li><a href="/future_synthesis/editor/">Editor</a></li>
-                    <li><a href="/future_synthesis/#newsletter">ニュースレター</a></li>
+                    <li><a href="{{ site.baseurl }}/#articles">最新記事</a></li>
+                    <li><a href="{{ site.baseurl }}/#newsletter">ニュースレター</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <slot />
+    {{ content }}
 
     <footer>
         <div class="footer-content">
             <h2 class="logo">FUTURE SYNTHESIS</h2>
-            <p>&copy; 2026 Future Synthesis Media. Built with Astro & Pages CMS.</p>
+            <p>&copy; 2026 Future Synthesis Media. Built with Jekyll.</p>
         </div>
     </footer>
 
     <script>
         // Header scroll effect
-        const header = document.querySelector('.glass-header') as HTMLElement;
+        const header = document.querySelector('.glass-header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 header.style.background = 'rgba(3, 3, 8, 0.85)';
