@@ -6,7 +6,6 @@ content:
     label: 記事 (Posts)
     type: collection
     path: _posts
-    format: frontmatter-markdown
     view:
       fields:
         - title
