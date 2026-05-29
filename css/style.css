@@ -97,10 +97,11 @@ a { text-decoration: none; color: inherit; }
 /* Footer & Substack */
 footer { padding: 3rem 2rem; text-align: center; background: #010103; border-top: 1px solid rgba(255,255,255,0.05); }
 .newsletter-section { background: linear-gradient(to right, rgba(3, 3, 8, 1), rgba(11, 11, 26, 1)); border-top: 1px solid rgba(255,255,255,0.05); padding: 6rem 2rem; }
-.newsletter-container { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 4rem; }
+.newsletter-container { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 4rem; flex-wrap: wrap; }
+.newsletter-text { flex: 1; min-width: 300px; }
 .newsletter-text h2 { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; margin-bottom: 1rem; }
-.newsletter-text p { color: var(--text-muted); font-size: 1.1rem; }
-.newsletter-form-wrapper { flex: 1; max-width: 480px; width: 100%; }
+.newsletter-text p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
+.newsletter-form-wrapper { flex: 1; min-width: 300px; max-width: 480px; width: 100%; }
 
 /* Animations */
 .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
