@@ -4,7 +4,7 @@ layout: post
 
 title: "眠ることが「戦略」になる日——睡眠テックとグリンパティック系が変える知的生産の未来"
 
-date: 2026-06-10-sleep1
+date: 2026-06-10
 
 category: ai
 
