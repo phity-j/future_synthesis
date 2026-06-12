@@ -49,6 +49,11 @@ layout: default
         <p class="section-desc">著者について</p>
     </div>
     <div class="profile-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 3rem; display: flex; gap: 3rem; align-items: center; max-width: 900px; margin: 0 auto; flex-wrap: wrap;">
+        {% if site.profile_image %}
+        <div class="profile-avatar-container" style="flex-shrink: 0; margin: 0 auto;">
+            <img src="{{ site.baseurl }}{{ site.profile_image }}" alt="{{ site.profile_name }}" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.1);">
+        </div>
+        {% endif %}
         <div class="profile-info" style="flex: 1; min-width: 300px;">
             <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">{{ site.profile_name }}</h3>
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.05rem;">{{ site.profile_desc }}</p>

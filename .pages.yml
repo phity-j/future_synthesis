@@ -62,6 +62,9 @@ content:
       - name: profile_name
         label: プロフィール - 名前
         type: string
+      - name: profile_image
+        label: プロフィール - 画像 (Avatar)
+        type: image
       - name: profile_desc
         label: プロフィール - 紹介文
         type: text
