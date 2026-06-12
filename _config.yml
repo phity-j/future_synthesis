@@ -1,21 +1,10 @@
-﻿title: FUTURE SYNTHESIS | 未来予測メディア
+title: FUTURE SYNTHESIS | 未来予測メディア
 description: AI・文明・建築・国家・資本の未来を考察する知的メディア
-url: "https://phity-j.github.io"
-baseurl: "/future_synthesis"
-
-# Jekyll settings
-markdown: kramdown
-theme: jekyll-theme-minimal
-exclude: [".pages.yml", "node_modules", "vendor"]
-permalink: /posts/:year/:month/:day/:title/
-
-# Profile settings
-profile_name: "フィティ"
-profile_desc: "未来研究家。リスク構造分析の視点からAI文明化を解明。「静かな緊張感」に満ちた論考は、政策関係者からクリエイターまで熱い支持を集める。複雑な未来をシンプルに読み解くための「構造と予測」をインボックスへ直接配信。"
-profile_bio: "経歴：竹中技術研究所、プリンストン大学、国家公務員を経て現職。"
-profile_url: "https://phity.substack.com/"
-
-# Newsletter settings
-newsletter_title: "Join the Future."
-newsletter_desc: "最先端の未来予測レポートを毎週お届けします。あなたの知的好奇心を満たす情報を、いち早くキャッチしましょう。"
-newsletter_url: "https://phity.substack.com/"
+profile_name: フィティ
+profile_image: /images/480.png
+profile_desc: 未来研究家。リスク構造分析の視点からAI文明化を解明。「静かな緊張感」に満ちた論考は、政策関係者からクリエイターまで熱い支持を集める。複雑な未来をシンプルに読み解くための「構造と予測」をインボックスへ直接配信。
+profile_bio: 経歴：竹中技術研究所、プリンストン大学、国家公務員を経て現職。
+profile_url: https://phity.substack.com/
+newsletter_title: Join the Future.
+newsletter_desc: 最先端の未来予測レポートを毎週お届けします。あなたの知的好奇心を満たす情報を、いち早くキャッチしましょう。
+newsletter_url: https://phity.substack.com/
