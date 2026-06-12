@@ -47,3 +47,15 @@ content:
       - name: body
         label: 本文
         type: rich-text
+  - name: settings
+    label: サイト基本設定 (Settings)
+    type: file
+    path: _config.yml
+    fields:
+      - name: title
+        label: サイト名 (Title)
+        type: string
+        required: true
+      - name: description
+        label: サイトの説明 (Description)
+        type: text
