@@ -59,3 +59,24 @@ content:
       - name: description
         label: サイトの説明 (Description)
         type: text
+      - name: profile_name
+        label: プロフィール - 名前
+        type: string
+      - name: profile_desc
+        label: プロフィール - 紹介文
+        type: text
+      - name: profile_bio
+        label: プロフィール - 経歴
+        type: string
+      - name: profile_url
+        label: プロフィール - リンク先URL
+        type: string
+      - name: newsletter_title
+        label: ニュースレター - タイトル
+        type: string
+      - name: newsletter_desc
+        label: ニュースレター - 説明文
+        type: text
+      - name: newsletter_url
+        label: ニュースレター - Substack URL
+        type: string
