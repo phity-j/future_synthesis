@@ -48,16 +48,16 @@ layout: default
         <h2 class="section-title">Profile</h2>
     </div>
     <div class="profile-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 3rem; display: flex; gap: 3rem; align-items: center; max-width: 900px; margin: 0 auto; flex-wrap: wrap;">
-        {% if site.profile_image %}
+        {% if site.data.settings.profile_image %}
         <div class="profile-avatar-container" style="flex-shrink: 0; margin: 0 auto;">
-            <img src="{{ site.baseurl }}{{ site.profile_image }}" alt="{{ site.profile_name }}" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.1);">
+            <img src="{{ site.baseurl }}{{ site.data.settings.profile_image }}" alt="{{ site.data.settings.profile_name }}" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.1);">
         </div>
         {% endif %}
         <div class="profile-info" style="flex: 1; min-width: 300px;">
-            <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">{{ site.profile_name }}</h3>
-            <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.05rem;">{{ site.profile_desc }}</p>
-            <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem; font-size: 0.95rem;">{{ site.profile_bio }}</p>
-            <a href="{{ site.profile_url }}" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.8rem 2rem; background: rgba(255, 103, 25, 0.1); border: 1px solid rgba(255, 103, 25, 0.3); border-radius: 30px; color: #ff6719; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">👉 より深い思考の原液はこちら (Substack)</a>
+            <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">{{ site.data.settings.profile_name }}</h3>
+            <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.05rem;">{{ site.data.settings.profile_desc }}</p>
+            <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem; font-size: 0.95rem;">{{ site.data.settings.profile_bio }}</p>
+            <a href="{{ site.data.settings.profile_url }}" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.8rem 2rem; background: rgba(255, 103, 25, 0.1); border: 1px solid rgba(255, 103, 25, 0.3); border-radius: 30px; color: #ff6719; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">👉 より深い思考の原液はこちら (Substack)</a>
         </div>
     </div>
 </section>
@@ -66,14 +66,14 @@ layout: default
 <section id="newsletter" class="newsletter-section">
     <div class="newsletter-container">
         <div class="newsletter-text">
-            <h2>{{ site.newsletter_title }}</h2>
-            <p>{{ site.newsletter_desc }}</p>
+            <h2>{{ site.data.settings.newsletter_title }}</h2>
+            <p>{{ site.data.settings.newsletter_desc }}</p>
         </div>
         <div class="newsletter-form-wrapper">
-            <iframe src="{{ site.newsletter_url }}embed" width="100%" height="320" style="border: 1px solid rgba(255, 255, 255, 0.1); background: #ffffff; border-radius: 12px; overflow: hidden; margin-bottom: 1rem;" frameborder="0" scrolling="no"></iframe>
+            <iframe src="{{ site.data.settings.newsletter_url }}embed" width="100%" height="320" style="border: 1px solid rgba(255, 255, 255, 0.1); background: #ffffff; border-radius: 12px; overflow: hidden; margin-bottom: 1rem;" frameborder="0" scrolling="no"></iframe>
             <div style="text-align: center; font-size: 0.9rem;">
                 <p style="color: var(--text-muted); margin-bottom: 0.5rem;">※フォームが表示されない場合はこちら</p>
-                <a href="{{ site.newsletter_url }}" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">👉 Substackの登録ページへ直接移動する</a>
+                <a href="{{ site.data.settings.newsletter_url }}" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">👉 Substackの登録ページへ直接移動する</a>
             </div>
         </div>
     </div>

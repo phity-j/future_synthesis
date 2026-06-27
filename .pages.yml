@@ -50,7 +50,7 @@ content:
   - name: settings
     label: サイト基本設定 (Settings)
     type: file
-    path: _config.yml
+    path: _data/settings.yml
     fields:
       - name: title
         label: サイト名 (Title)
