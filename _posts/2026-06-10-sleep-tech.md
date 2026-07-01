@@ -2,6 +2,7 @@
 title: 眠ることが「戦略」になる日——睡眠テックとグリンパティック系が変える知的生産の未来
 date: 2026-06-10
 description: 脳の廃棄物処理システム「グリンパティック系」の発見は、睡眠を健康管理から知的生産戦略へと再定義した。睡眠テックとAIが交差する2030年代の3つのシナリオ。
+thumbnail: /images/944.jpg
 category: ai
 ---
 ![眠ることが「戦略」になる日](https:/phity-j.github.io/future_synthesis/images/hero_bg.png)
