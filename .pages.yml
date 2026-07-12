@@ -16,6 +16,10 @@ content:
         label: タイトル
         type: string
         required: true
+      - name: slug
+        label: 英語スラッグ (URLの一部になります)
+        type: string
+        description: "例: 'ai-future' と入力すると /posts/2026/07/13/ai-future/ になります。必ず半角の英数字とハイフン(-)のみで入力してください。"
       - name: date
         label: 日付
         type: date
