@@ -9,3 +9,9 @@ theme: jekyll-theme-minimal
 exclude: [".pages.yml", "node_modules", "vendor"]
 permalink: /posts/:year/:month/:day/:title/
 timezone: Asia/Tokyo
+# _config.yml に追加20260713
+url: "https://phity-j.github.io"
+baseurl: "/future_synthesis"
+
+plugins:
+  - jekyll-sitemap
