@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://phity-j.github.io/future_synthesis/sitemap.xml
