@@ -93,6 +93,8 @@ a { text-decoration: none; color: inherit; }
 .markdown-body ul, .markdown-body ol { margin-bottom: 1.5rem; padding-left: 2rem; }
 .markdown-body li { margin-bottom: 0.5rem; }
 .markdown-body strong { color: var(--accent-cyan); }
+.markdown-body a { color: var(--accent-cyan); text-decoration: underline; text-underline-offset: 4px; transition: color 0.3s ease; }
+.markdown-body a:hover { color: #fff; }
 
 /* Footer & Substack */
 footer { padding: 3rem 2rem; text-align: center; background: #010103; border-top: 1px solid rgba(255,255,255,0.05); }
