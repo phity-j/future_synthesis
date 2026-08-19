@@ -113,3 +113,11 @@ footer { padding: 3rem 2rem; text-align: center; background: #010103; border-top
     .newsletter-container { flex-direction: column; text-align: center; }
     .nav-links { display: none; }
 }
+
+/* TOC Styling */
+.toc-container ul { list-style: none; padding-left: 1rem; margin-bottom: 0; }
+.toc-container > ul { padding-left: 0; }
+.toc-container li { margin-bottom: 0.5rem; line-height: 1.4; font-size: 0.95rem; }
+.toc-container a { color: var(--text-main); text-decoration: none; transition: color 0.3s ease; }
+.toc-container a:hover { color: var(--accent-cyan); text-decoration: underline; text-underline-offset: 4px; }
+.nav-link:hover { background: rgba(0, 240, 255, 0.05) !important; border-color: rgba(0, 240, 255, 0.2) !important; }

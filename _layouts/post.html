@@ -15,15 +15,85 @@ layout: default
     {% endif %}
 
     <div class="post-body markdown-body" style="font-size: 1.1rem; line-height: 1.8; color: #d0d4e0;">
+        <!-- 目次 (TOC) -->
+        <div class="toc-container" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 3rem;">
+            <h4 style="margin-bottom: 1rem; color: var(--accent-cyan); font-size: 1.2rem;">目次</h4>
+            * TOC
+            {:toc}
+        </div>
+        
         {{ content }}
     </div>
 
     <div class="sns-share" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
         <p style="margin-bottom: 1rem; color: var(--text-muted);">この記事をシェアする</p>
-        <div style="display: flex; justify-content: center; gap: 1rem;">
-            <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1.5rem; background: rgba(255,255,255,0.1); border-radius: 20px; color: #fff; transition: background 0.3s;">X (Twitter)</a>
-            <a href="https://note.com/phity" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1.5rem; background: rgba(65, 201, 178, 0.2); border-radius: 20px; color: #41c9b2; transition: background 0.3s;">noteでフォロー</a>
-            <a href="https://phity.substack.com" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1.5rem; background: rgba(255, 103, 25, 0.2); border-radius: 20px; color: #ff6719; transition: background 0.3s;">Substack購読</a>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank" rel="noopener noreferrer" style="padding: 0.5rem 1.5rem; background: rgba(255,255,255,0.1); border-radius: 20px; color: #fff; text-decoration: none; transition: background 0.3s;">X (Twitter)</a>
+            <button onclick="copyToClipboard()" id="copy-btn" style="padding: 0.5rem 1.5rem; background: rgba(255, 255, 255, 0.1); border: none; border-radius: 20px; color: #fff; cursor: pointer; transition: background 0.3s; font-family: inherit; font-size: 1rem;">URLをコピー</button>
+        </div>
+    </div>
+
+    <!-- 記事ナビゲーション（前後の記事） -->
+    <div class="post-navigation" style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem; flex-wrap: wrap;">
+        {% if page.previous %}
+            <a href="{{ site.baseurl }}{{ page.previous.url }}" class="nav-link prev" style="flex: 1; min-width: 280px; padding: 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; text-decoration: none; color: var(--text-main); transition: all 0.3s ease;">
+                <div style="font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 0.5rem;">&larr; 前の記事</div>
+                <div style="font-weight: 600; line-height: 1.4;">{{ page.previous.title }}</div>
+            </a>
+        {% else %}
+            <div style="flex: 1; min-width: 280px;"></div>
+        {% endif %}
+
+        {% if page.next %}
+            <a href="{{ site.baseurl }}{{ page.next.url }}" class="nav-link next" style="flex: 1; min-width: 280px; padding: 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; text-decoration: none; color: var(--text-main); transition: all 0.3s ease; text-align: right;">
+                <div style="font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 0.5rem;">次の記事 &rarr;</div>
+                <div style="font-weight: 600; line-height: 1.4;">{{ page.next.title }}</div>
+            </a>
+        {% else %}
+            <div style="flex: 1; min-width: 280px;"></div>
+        {% endif %}
+    </div>
+
+    <!-- 関連記事 -->
+    <div class="related-articles" style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1);">
+        <h3 style="font-size: 1.5rem; margin-bottom: 2rem; text-align: center;">おすすめの記事</h3>
+        <div class="article-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem;">
+            {% assign count = 0 %}
+            {% for post in site.posts %}
+                {% if post.url != page.url and count < 3 %}
+                    <a href="{{ site.baseurl }}{{ post.url }}" class="note-card-link" style="display:block; text-decoration: none;">
+                        <article class="note-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; transition: transform 0.3s; height: 100%; display: flex; flex-direction: column;">
+                            <div class="card-image" style="height: 140px; overflow: hidden;">
+                                <img src="{{ site.baseurl }}{% if post.thumbnail %}{{ post.thumbnail }}{% else %}/images/hero_bg.png{% endif %}" alt="{{ post.title }}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                            </div>
+                            <div style="padding: 1.2rem; flex: 1; display: flex; flex-direction: column;">
+                                <h4 style="font-size: 1.05rem; line-height: 1.4; margin-bottom: 0.8rem; color: var(--text-main); font-weight: 600;">{{ post.title }}</h4>
+                                <div style="margin-top: auto;">
+                                    <time datetime="{{ post.date | date_to_xmlschema }}" style="font-size: 0.8rem; color: var(--text-muted);">{{ post.date | date: "%Y.%m.%d" }}</time>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                    {% assign count = count | plus: 1 %}
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 </article>
+
+<script>
+    function copyToClipboard() {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            const btn = document.getElementById('copy-btn');
+            const originalText = btn.innerText;
+            btn.innerText = 'コピーしました！';
+            btn.style.background = 'rgba(0, 240, 255, 0.2)';
+            btn.style.color = 'var(--accent-cyan)';
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = 'rgba(255, 255, 255, 0.1)';
+                btn.style.color = '#fff';
+            }, 2000);
+        });
+    }
+</script>
