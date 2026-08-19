@@ -1,3 +1,4 @@
+siteUrl: "https://phity-j.github.io/future_synthesis"
 media:
   input: images
   output: /images
@@ -6,6 +7,7 @@ content:
     label: 記事 (Posts)
     type: collection
     path: _posts
+    url: "https://phity-j.github.io/future_synthesis/posts/{year}/{month}/{day}/{slug}/"
     view:
       fields:
         - title
