@@ -121,3 +121,9 @@ footer { padding: 3rem 2rem; text-align: center; background: #010103; border-top
 .toc-container a { color: var(--text-main); text-decoration: none; transition: color 0.3s ease; }
 .toc-container a:hover { color: var(--accent-cyan); text-decoration: underline; text-underline-offset: 4px; }
 .nav-link:hover { background: rgba(0, 240, 255, 0.05) !important; border-color: rgba(0, 240, 255, 0.2) !important; }
+
+/* Table Styling */
+.markdown-body table { width: 100%; margin-bottom: 2rem; border-collapse: collapse; background-color: rgba(255, 255, 255, 0.02); overflow-x: auto; display: block; }
+.markdown-body table th, .markdown-body table td { padding: 0.8rem 1rem; border: 1px solid rgba(255, 255, 255, 0.1); }
+.markdown-body table th { background-color: rgba(255, 255, 255, 0.05); font-weight: 600; text-align: left; color: var(--accent-cyan); }
+.markdown-body table tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.02); }
